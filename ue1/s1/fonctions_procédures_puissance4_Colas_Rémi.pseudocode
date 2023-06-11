@@ -1,0 +1,79 @@
+//fonctions et procédures pour le puissance 4 Rémi Colas 1D1
+
+procédure affiche_tableau
+affiche le tableau ainsi que le nombre de victoires des 2 joueurs.
+
+parametres: 
+tableau(entrée):t_grille , Pour afficher la grille.
+vic_R(entrée):entier , Pour afficher les victoires du joueur rouge.
+vic_J(entrée): entier , Pour afficher les victoires du joueur jaune.
+
+//
+
+procédure tours_classique
+permet de placer les jetons dans la grille, indique si une colonne est pleine et indique si un joueur à gagner via les procédures calcule_ligne,calcule_colonne,calcule_oblique ci-dessous sont appellées dans cette procédure.
+
+parametres:
+tableau(entrée/sortie):t_grille, sert pour mettre les jetons dans la grille et la renvoie modifier.
+pers(entrée/sortie):charatère, sert pour savoir la couleur du jeton et envoie cela dans les 4 autres procédures contenuent dans celle-ci.
+victoire(entrée/sortier):booléen, sert à savoir si quelqu'un à gagner et l'indiquer si c'est vrai.
+
+//
+
+procédure restart
+permets de redémarrer le jeu en conservant les scores quand quelqu'un à gagné et demandé si on veut continuer de jouer ou non.
+
+parametres:
+grille(entrée/sortie):t_grille, sert pour être reintialisé à zéro.
+victoire (sortie):booléen, sert pour être reintialisé à zéro.
+rep (sortie):charactère, si 'O' on rejoue sinon on arrete le jeu.
+
+//
+
+procédure calcul_ligne
+se trouve dans la procédure tours_classique.
+envoie vrai si sur la ligne du jeton placé, il y a 4 jetons de la même couleur qui se suivent.
+
+paramètres:
+f_tableau(entrée):t_grille, sert pour lire si les jetons se suivent.
+pos_l (entrée):entier, sert pour connaitre la ligne où le jeton est placé.
+gagner (sortie):booléen, devient vrai si 4 jetons de la même couleur sont alignés.
+player (entrée):charactère, sert à savoir si on regarde les jetons jaunes ou rouges.
+
+//
+
+procédure calcul_colonne
+se trouve dans la procédure tours_classique.
+envoie vrai si sur la colonne du jeton placé, il y a 4 jetons de la même couleur qui se suivent.
+
+paramètres:
+f_tableau(entrée):t_grille, sert pour lire si les jetons se suivent.
+pos_c (entrée):entier, sert pour connaitre la colonne où le jeton est placé.
+gagner (sortie):booléen, devient vrai si 4 jetons de la même couleur sont alignés.
+player (entrée):charactère, sert à savoir si on regarde les jetons jaunes ou rouges.
+
+//
+
+procédure calcul_diag_v_droite
+se trouve dans la procédure tours_classique.
+envoie vrai si sur la diagonale d'en haut à gauche à en bas à droite du jeton placé, il y a 4 jetons de la même couleur qui se suivent.
+
+paramètres:
+f_tableau(entrée):t_grille, sert pour lire si les jetons se suivent.
+pos_l(entrée):entier, sert pour connaitre la ligne où le jeton est placé.
+pos_c (entrée):entier, sert pour connaitre la colonne où le jeton est placé.
+gagner (sortie):booléen, devient vrai si 4 jetons de la même couleur sont alignés.
+player (entrée):charactère, sert à savoir si on regarde les jetons jaunes ou rouges.
+
+//
+
+procédure calcul_diag_v_gauche
+se trouve dans la procédure tours_classique.
+envoie vrai si sur la diagonale d'en haut à droite à en bas à gauche du jeton placé, il y a 4 jetons de la même couleur qui se suivent.
+
+paramètres:
+f_tableau(entrée):t_grille, sert pour lire si les jetons se suivent.
+pos_l(entrée):entier, sert pour connaitre la ligne où le jeton est placé.
+pos_c (entrée):entier, sert pour connaitre la colonne où le jeton est placé.
+gagner (sortie):booléen, devient vrai si 4 jetons de la même couleur sont alignés.
+player (entrée):charactère, sert à savoir si on regarde les jetons jaunes ou rouges.
